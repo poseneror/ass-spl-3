@@ -1,0 +1,40 @@
+[
+  {
+    "username": "john",
+    "password": "potato",
+    "country": "united states",
+    "admin": true,
+    "movies": [],
+    "balance": 0
+  },
+  {
+    "username": "lisa",
+    "password": "chips123",
+    "country": "spain",
+    "admin": false,
+    "movies": [
+      "The Pursuit Of Happyness",
+      "The Notebook"
+    ],
+    "balance": 37
+  },
+  {
+    "username": "shlomi",
+    "password": "cocacola",
+    "country": "israel",
+    "admin": false,
+    "movies": [
+      "The Pursuit Of Happyness",
+      "The Godfather"
+    ],
+    "balance": 112
+  },
+  {
+    "username": "steve",
+    "password": "mypass",
+    "country": "iran",
+    "admin": false,
+    "movies": [],
+    "balance": 50
+  }
+]

@@ -1,0 +1,52 @@
+{
+  "lastId": 7,
+  "movies": [
+    {
+      "id": 2,
+      "name": "moshe",
+      "price": 7,
+      "banned": [],
+      "available": 1,
+      "total": 2
+    },
+    {
+      "id": 3,
+      "name": "shadki",
+      "price": 5,
+      "banned": [
+        "moshiko"
+      ],
+      "available": 4,
+      "total": 5
+    },
+    {
+      "id": 4,
+      "name": "the daniel is wild",
+      "price": 15,
+      "banned": [
+        "EVERYWHERE",
+        "dont ask"
+      ],
+      "available": 19,
+      "total": 20
+    },
+    {
+      "id": 5,
+      "name": "daniel is gay",
+      "price": 10,
+      "banned": [
+        "iran"
+      ],
+      "available": 1,
+      "total": 2
+    },
+    {
+      "id": 6,
+      "name": "or the movie",
+      "price": 1000,
+      "banned": [],
+      "available": 5,
+      "total": 5
+    }
+  ]
+}
