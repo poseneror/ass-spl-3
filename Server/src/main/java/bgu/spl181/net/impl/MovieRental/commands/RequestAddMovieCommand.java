@@ -40,7 +40,7 @@ public class RequestAddMovieCommand extends Command {
             try {
                 Movie added = MovieDatabase.addMovie(movie);
                 if(added != null) {
-                    broadcast = "movie " + wrap(added.getName()) + " " + added.getAvailable() + " " + added.getPrice();
+                    broadcast = "movie " + wrap(added.getName()) + " " + added.getAvailableAmount() + " " + added.getPrice();
                     return true;
                 } else {
                     return false;

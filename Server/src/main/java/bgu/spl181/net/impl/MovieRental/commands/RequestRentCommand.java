@@ -28,7 +28,7 @@ public class RequestRentCommand extends Command {
             Movie movie = MovieDatabase.rentMovie(movieName, getLoggedUser(connectionId));
             if(movie != null){
                 output = wrap(movieName) + " success";
-                broadcast = "movie " + wrap(movie.getName()) + " " + movie.getAvailable() + " " + movie.getPrice();
+                broadcast = "movie " + wrap(movie.getName()) + " " + movie.getAvailableAmount() + " " + movie.getPrice();
                 return true;
             } else {
                 name = "request rent";

@@ -40,9 +40,9 @@ public class RequestInfoCommand extends Command {
             try {
                 Movie movie = MovieDatabase.getMovieInfo(movieName);
                 if (movie != null) {
-                    output = wrap(movie.getName()) + " " + movie.getAvailable() + " " + movie.getPrice() + " ";
-                    if (movie.getBanned() != null) {
-                        for (String country : movie.getBanned()) {
+                    output = wrap(movie.getName()) + " " + movie.getAvailableAmount() + " " + movie.getPrice() + " ";
+                    if (movie.getBannedCountries() != null) {
+                        for (String country : movie.getBannedCountries()) {
                             output += wrap(country) + " ";
                         }
                     }

@@ -9,41 +9,41 @@ public class Movie {
     private int id;
     private String name;
     private int price;
-    private List<String> banned;
-    private int available;
-    private int total;
+    private List<String> bannedCountries;
+    private int availableAmount;
+    private int totalAmount;
 
     public Movie(String name, int total, int price, List<String> banned){
         this.name = name;
-        this.total = total;
+        this.totalAmount = total;
         this.price = price;
         this.id = id;
-        this.available = total;
-        this.banned = banned;
+        this.availableAmount = total;
+        this.bannedCountries = banned;
     }
 
     public String getName() {
         return name;
     }
 
-    public int getAvailable() {
-        return available;
+    public int getAvailableAmount() {
+        return availableAmount;
     }
 
     public int getPrice() {
         return price;
     }
 
-    public int getTotal() {
-        return total;
+    public int getTotalAmount() {
+        return totalAmount;
     }
 
     public int getId() {
         return id;
     }
 
-    public void setAvailable(int available) {
-        this.available = available;
+    public void setAvailableAmount(int availableAmount) {
+        this.availableAmount = availableAmount;
     }
 
     public void setName(String name) {
@@ -54,8 +54,8 @@ public class Movie {
         this.price = price;
     }
 
-    public List<String> getBanned() {
-        return banned;
+    public List<String> getBannedCountries() {
+        return bannedCountries;
     }
 
     public void setId(int id) {

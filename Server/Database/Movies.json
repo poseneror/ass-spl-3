@@ -1,52 +1,53 @@
 {
-  "lastId": 7,
   "movies": [
     {
-      "id": 2,
-      "name": "moshe",
-      "price": 7,
-      "banned": [],
-      "available": 1,
-      "total": 2
-    },
-    {
-      "id": 3,
-      "name": "shadki",
-      "price": 5,
-      "banned": [
-        "moshiko"
+      "id": "1",
+      "name": "The Godfather",
+      "price": "25",
+      "bannedCountries": [
+        "united kingdom",
+        "italy"
       ],
-      "available": 4,
-      "total": 5
+      "availableAmount": "1",
+      "totalAmount": "2"
     },
     {
-      "id": 4,
-      "name": "the daniel is wild",
-      "price": 15,
-      "banned": [
-        "EVERYWHERE",
-        "dont ask"
+      "id": "2",
+      "name": "The Pursuit Of Happyness",
+      "price": "14",
+      "bannedCountries": [],
+      "availableAmount": "3",
+      "totalAmount": "5"
+    },
+    {
+      "id": "3",
+      "name": "The Notebook",
+      "price": "5",
+      "bannedCountries": [],
+      "availableAmount": "0",
+      "totalAmount": "1"
+    },
+    {
+      "id": "4",
+      "name": "Justice League",
+      "price": "17",
+      "bannedCountries": [
+        "jordan",
+        "iran",
+        "lebanon"
       ],
-      "available": 19,
-      "total": 20
+      "availableAmount": "4",
+      "totalAmount": "4"
     },
     {
-      "id": 5,
-      "name": "daniel is gay",
-      "price": 10,
-      "banned": [
-        "iran"
+      "id": "5",
+      "name": "BLBLBLBL",
+      "price": "4",
+      "bannedCountries": [
+        "asdfasdf"
       ],
-      "available": 1,
-      "total": 2
-    },
-    {
-      "id": 6,
-      "name": "or the movie",
-      "price": 1000,
-      "banned": [],
-      "available": 5,
-      "total": 5
+      "availableAmount": "8",
+      "totalAmount": "10"
     }
   ]
 }

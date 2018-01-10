@@ -27,7 +27,7 @@ public class RequestReturnCommand extends Command {
             Movie movie = MovieDatabase.returnMovie(movieName, getLoggedUser(connectionId));
             if(movie != null){
                 output = wrap(movieName) + " success";
-                broadcast = "movie " + wrap(movie.getName()) + " " + movie.getAvailable() + " " + movie.getPrice();
+                broadcast = "movie " + wrap(movie.getName()) + " " + movie.getAvailableAmount() + " " + movie.getPrice();
                 return true;
             } else {
                 return false;

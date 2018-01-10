@@ -1,36 +1,63 @@
-[
-  {
-    "username": "or",
-    "password": "1234",
-    "country": "israel",
-    "admin": true,
-    "movies": [
-      "daniel is gay",
-      "moshe",
-      "shadki",
-      "the daniel is wild"
-    ],
-    "balance": 83
-  },
-  {
-    "username": "dani",
-    "password": "1234",
-    "admin": false,
-    "movies": [],
-    "balance": 0
-  },
-  {
-    "username": "d",
-    "password": "d",
-    "admin": false,
-    "movies": [],
-    "balance": 0
-  },
-  {
-    "username": "Daniel",
-    "password": "1234",
-    "admin": false,
-    "movies": [],
-    "balance": 0
-  }
-]
+{
+  "users": [
+    {
+      "username": "john",
+      "password": "potato",
+      "country": "united states",
+      "type": "admin",
+      "movies": [
+        {
+          "id": "5",
+          "name": "BLBLBLBL"
+        }
+      ],
+      "balance": "996"
+    },
+    {
+      "username": "lisa",
+      "password": "chips123",
+      "country": "spain",
+      "type": "normal",
+      "movies": [
+        {
+          "id": "2",
+          "name": "The Pursuit Of Happyness"
+        },
+        {
+          "id": "3",
+          "name": "The Notebook"
+        }
+      ],
+      "balance": "37"
+    },
+    {
+      "username": "shlomi",
+      "password": "cocacola",
+      "country": "israel",
+      "type": "normal",
+      "movies": [
+        {
+          "id": "1",
+          "name": "The Godfather"
+        },
+        {
+          "id": "2",
+          "name": "The Pursuit Of Happyness"
+        }
+      ],
+      "balance": "112"
+    },
+    {
+      "username": "or",
+      "password": "1234",
+      "type": "normal",
+      "movies": [
+        {
+          "id": "5",
+          "name": "BLBLBLBL"
+        }
+      ],
+      "balance": "996"
+    }
+  ]
+}

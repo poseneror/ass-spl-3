@@ -7,12 +7,10 @@ import java.util.List;
  * Created by Or on 02/01/2018.
  */
 public class MovieLibrary {
-    int lastId;
     List<Movie> movies;
 
 
     public MovieLibrary(){
-        this.lastId = 1;
         movies = new ArrayList<>();
     }
 
@@ -26,9 +24,8 @@ public class MovieLibrary {
                 return false;
             }
         }
-        movie.setId(lastId);
+        movie.setId(getLastId());
         movies.add(movie);
-        lastId++;
         return true;
     }
 
@@ -43,6 +40,13 @@ public class MovieLibrary {
     }
 
     public int getLastId() {
+        int lastId = 0;
+        for(Movie m : getMovies()){
+            if(m.getId() > lastId){
+                lastId = m.getId();
+            }
+        }
+        lastId++;
         return lastId;
     }
 

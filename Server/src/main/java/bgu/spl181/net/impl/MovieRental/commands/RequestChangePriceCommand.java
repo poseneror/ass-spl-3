@@ -28,7 +28,7 @@ public class RequestChangePriceCommand extends Command {
                 Movie movie = MovieDatabase.updateMoviePrice(name, price);
                 if(movie != null){
                     output =  wrap(movie.getName()) + " success";
-                    broadcast = "movie " + wrap(movie.getName()) + " " + movie.getAvailable() + " " + movie.getPrice();
+                    broadcast = "movie " + wrap(movie.getName()) + " " + movie.getAvailableAmount() + " " + movie.getPrice();
                     return true;
                 } else {
                     return false;
