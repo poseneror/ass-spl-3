@@ -21,13 +21,15 @@ public class RequestAddMovieCommand extends Command {
     @Override
     public boolean execute() {
         if(!isAdmin()){
+            name = "request addmovie";
             return false;
         }
         if(args.size() >= 4){
-            String name = args.get(1);
+            String movieName = args.get(1);
             int amount = Integer.parseInt(args.get(2));
             int price = Integer.parseInt(args.get(3));
             if(amount <= 0 || price <= 0){
+                name = "request addmovie";
                 return false;
             }
             List<String> banned = new ArrayList<>();
@@ -36,21 +38,25 @@ public class RequestAddMovieCommand extends Command {
                     banned.add(args.get(i));
                 }
             }
-            Movie movie = new Movie(name, amount, price, banned);
+            Movie movie = new Movie(movieName, amount, price, banned);
             try {
                 Movie added = MovieDatabase.addMovie(movie);
                 if(added != null) {
+                    output = wrap(added.getName()) + " success";
                     broadcast = "movie " + wrap(added.getName()) + " " + added.getAvailableAmount() + " " + added.getPrice();
                     return true;
                 } else {
+                    name = "request addmovie";
                     return false;
                 }
 
             } catch (IOException e) {
                 e.printStackTrace();
+                name = "request addmovie";
                 return false;
             }
         }
+        name = "request addmovie";
         return false;
     }
 

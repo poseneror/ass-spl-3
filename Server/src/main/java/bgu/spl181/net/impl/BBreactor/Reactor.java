@@ -86,7 +86,9 @@ public class Reactor<T> implements Server<T> {
             key.interestOps(ops);
         } else {
             selectorTasks.add(() -> {
-                key.interestOps(ops);
+                if(key != null && key.isValid()) {
+                    key.interestOps(ops);
+                }
             });
             selector.wakeup();
         }
@@ -95,7 +97,6 @@ public class Reactor<T> implements Server<T> {
 
     private void handleAccept(ServerSocketChannel serverChan, Selector selector) throws IOException {
         SocketChannel clientChan = serverChan.accept();
-        System.out.println("ACCEPTED!");
         clientChan.configureBlocking(false);
         BidiMessagingProtocol protocol = protocolFactory.get();
         final NonBlockingConnectionHandler handler = new NonBlockingConnectionHandler(
@@ -105,7 +106,7 @@ public class Reactor<T> implements Server<T> {
                 this);
         // since we are implementing bidiprotocol there is always an option for recieving a broadcast by the client
         // thus the MovieRental should always listen for OP WRITE as well as OP READ
-        clientChan.register(selector, SelectionKey.OP_READ | SelectionKey.OP_WRITE, handler);
+        clientChan.register(selector, SelectionKey.OP_READ, handler);
         int id = clients.connect(handler);
         protocol.start(id, clients);
     }

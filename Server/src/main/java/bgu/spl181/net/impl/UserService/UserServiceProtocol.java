@@ -52,7 +52,9 @@ public abstract class UserServiceProtocol implements BidiMessagingProtocol<Strin
             command.run();
         } else if(message.startsWith("SIGNOUT")){
             Command command = new SignoutCommand(message, this);
-            command.run();
+            if(command.run()) {
+                Terminate();
+            }
         } else if(message.startsWith("REQUEST balance info")){
             Command command = new RequestBalanceInfoCommand(message, this);
             command.run();
@@ -63,15 +65,13 @@ public abstract class UserServiceProtocol implements BidiMessagingProtocol<Strin
     }
 
     public void Terminate(){
+        clients.disconnect(connectionId);
         terminate = true;
     }
 
     @Override
     public boolean shouldTerminate() {
         // the thread will get here after the signout process and terminate would be true
-        if(terminate){
-            clients.disconnect(connectionId);
-        }
         return terminate;
     }
 

@@ -19,6 +19,7 @@ public class RequestChangePriceCommand extends Command {
     @Override
     public boolean execute() {
         if(!isAdmin()){
+            name = "request changeprice";
             return false;
         }
         if(args.size() == 3){
@@ -31,14 +32,17 @@ public class RequestChangePriceCommand extends Command {
                     broadcast = "movie " + wrap(movie.getName()) + " " + movie.getAvailableAmount() + " " + movie.getPrice();
                     return true;
                 } else {
+                    name = "request changeprice";
                     return false;
                 }
 
             } catch (IOException e) {
                 e.printStackTrace();
+                name = "request changeprice";
                 return false;
             }
         }
+        name = "request changeprice";
         return false;
     }
 

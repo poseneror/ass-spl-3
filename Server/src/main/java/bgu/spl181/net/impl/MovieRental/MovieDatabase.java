@@ -74,7 +74,7 @@ public class MovieDatabase {
                 }
             }
         }
-        lock.writeLock().lock();
+        lock.writeLock().unlock();
         return false;
     }
 
@@ -150,6 +150,7 @@ public class MovieDatabase {
                 if (m.getName().equalsIgnoreCase(name)) {
                     m.setPrice(price);
                     setMovies(movies);
+                    lock.writeLock().unlock();
                     return m;
                 }
             }

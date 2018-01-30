@@ -6,6 +6,7 @@ import bgu.spl181.net.interfaces.MessageEncoderDecoder;
 
 import java.io.IOException;
 import java.nio.ByteBuffer;
+import java.nio.channels.SelectionKey;
 import java.nio.channels.SocketChannel;
 import java.util.Queue;
 import java.util.concurrent.ConcurrentLinkedQueue;
@@ -50,6 +51,7 @@ public class NonBlockingConnectionHandler<T> implements ConnectionHandler<T> {
                         T nextMessage = encdec.decodeNextByte(buf.get());
                         if (nextMessage != null) {
                             protocol.process(nextMessage);
+                            reactor.updateInterestedOps(chan, SelectionKey.OP_WRITE);
                         }
                     }
                 } finally {
@@ -93,7 +95,11 @@ public class NonBlockingConnectionHandler<T> implements ConnectionHandler<T> {
         }
 
         if (writeQueue.isEmpty()) {
-            if (protocol.shouldTerminate()) close();
+            if (protocol.shouldTerminate()) {
+                close();
+            } else {
+                reactor.updateInterestedOps(chan, SelectionKey.OP_READ | SelectionKey.OP_WRITE);
+            }
         }
     }
 

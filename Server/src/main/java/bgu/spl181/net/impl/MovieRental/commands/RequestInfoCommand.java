@@ -20,6 +20,7 @@ public class RequestInfoCommand extends Command {
     @Override
     public boolean execute() {
         if (!isLoggedIn()) {
+            name = "request info";
             return false;
         }
         if (args.size() == 1) {
@@ -32,6 +33,7 @@ public class RequestInfoCommand extends Command {
                 return true;
             } catch (IOException e) {
                 e.printStackTrace();
+                name = "request info";
                 return false;
             }
 
@@ -49,10 +51,12 @@ public class RequestInfoCommand extends Command {
                     output.trim();
                     return true;
                 } else {
+                    name = "request info";
                     return false;
                 }
             } catch (IOException e) {
                 e.printStackTrace();
+                name = "request info";
                 return false;
             }
         }

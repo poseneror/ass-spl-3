@@ -35,14 +35,17 @@ public abstract class Command {
         this.connections = protocol.getClients();
         this.protocol = protocol;
     }
-    public void run(){
+
+    public boolean run(){
         if(execute()){
             success();
             if(broadcast != null){
                 sendBroadcast();
             }
+            return true;
         } else {
             fail();
+            return false;
         }
     }
     public abstract boolean execute();

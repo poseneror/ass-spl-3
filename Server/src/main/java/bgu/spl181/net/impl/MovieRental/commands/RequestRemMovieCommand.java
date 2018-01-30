@@ -18,25 +18,29 @@ public class RequestRemMovieCommand extends Command {
     @Override
     public boolean execute() {
         if(!isAdmin()){
+            name = "request remmovie";
             return false;
         }
         if(args.size() == 2){
-            String name = args.get(1);
+            String movieName = args.get(1);
             try {
 
-                if(MovieDatabase.removeMovie(name)){
-                    output =  wrap(name) + " success";
-                    broadcast = "movie " + wrap(name) + " removed";
+                if(MovieDatabase.removeMovie(movieName)){
+                    output =  wrap(movieName) + " success";
+                    broadcast = "movie " + wrap(movieName) + " removed";
                     return true;
                 } else {
+                    name = "request remmovie";
                     return false;
                 }
 
             } catch (IOException e) {
                 e.printStackTrace();
+                name = "request remmovie";
                 return false;
             }
         }
+        name = "request remmovie";
         return false;
     }
 

@@ -20,6 +20,7 @@ public class RequestReturnCommand extends Command {
     @Override
     public boolean execute() {
         if(!isLoggedIn() || args.size()!= 2){
+            name = "request return";
             return false;
         }
         String movieName = args.get(1);
@@ -30,10 +31,12 @@ public class RequestReturnCommand extends Command {
                 broadcast = "movie " + wrap(movie.getName()) + " " + movie.getAvailableAmount() + " " + movie.getPrice();
                 return true;
             } else {
+                name = "request return";
                 return false;
             }
         } catch (IOException e) {
             e.printStackTrace();
+            name = "request return";
             return false;
         }
     }

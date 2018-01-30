@@ -17,6 +17,7 @@ public class RequestBalanceAddCommand extends Command {
     @Override
     public boolean execute() {
         if(!isLoggedIn()){
+            name = "request balance";
             return false;
         }
         if(args.size() >= 3){
@@ -26,8 +27,10 @@ public class RequestBalanceAddCommand extends Command {
                 output = balance + " added " + toAdd;
                 return true;
             }
+            name = "request balance";
             return false;
         }
+        name = "request balance";
         return false;
     }
 

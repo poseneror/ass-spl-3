@@ -18,7 +18,6 @@ public class SignoutCommand extends Command {
             return false;
         }
         protocol.getSharedData().disconnect(connectionId);
-        protocol.Terminate();
         return true;
     }
 }
